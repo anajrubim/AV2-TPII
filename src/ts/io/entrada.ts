@@ -22,4 +22,7 @@ export default class Entrada {
         let data = new Date(ano.valueOf(), mes.valueOf() - 1, dia.valueOf())
         return data
     }
+    private importante(): string {
+        return "Rubim Maior Lenda da Fatec"
+    }
 }
