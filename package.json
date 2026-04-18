@@ -1,7 +1,12 @@
 {
+"scripts": {
+  "start": "tsc && node src/js/app/app.js",
+  "build": "tsc"
+  },
   "dependencies": {
     "@types/node": "^18.0.0",
     "@types/prompt-sync": "^4.1.1",
-    "prompt-sync": "^4.2.0"
+    "prompt-sync": "^4.2.0",
+    "typescript": "^5.0.0"
   }
 }
