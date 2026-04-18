@@ -30,8 +30,23 @@ export default class CadastroClienteDependente extends Processo {
         let titularEscolhido = titulares[opcao - 1]
 
         let nome = this.entrada.receberTexto('Qual o nome do dependente?')
+        if (!nome || nome.trim() === '') {
+            console.log('Nome inválido. Cadastro cancelado.')
+            return
+        }
+
         let nomeSocial = this.entrada.receberTexto('Qual o nome social do dependente?')
+        if (!nomeSocial || nomeSocial.trim() === '') {
+            console.log('Nome social inválido. Cadastro cancelado.')
+            return
+        }
+
         let dataNascimento = this.entrada.receberData('Qual a data de nascimento?')
+        if (dataNascimento >= new Date()) {
+            console.log('Data de nascimento inválida. Cadastro cancelado.')
+            return
+        }
+
         let dependente = new Cliente(nome, nomeSocial, dataNascimento)
 
         this.processo = new CadastroEnderecoTitular(dependente)
@@ -42,7 +57,6 @@ export default class CadastroClienteDependente extends Processo {
 
         titularEscolhido.adicionarDependente(dependente)
         armazem.Clientes.push(dependente)
-
         console.log(`Dependente cadastrado com sucesso para o titular ${titularEscolhido.Nome}!`)
     }
 }
