@@ -1,6 +1,6 @@
 {
 "scripts": {
-  "start": "tsc && node src/js/app/app.js",
+  "start": "tsc && node dist/ts/app/app.js",
   "build": "tsc"
   },
   "dependencies": {
